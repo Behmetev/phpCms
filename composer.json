@@ -1,7 +1,7 @@
 {
     "autoload": {
         "psr-4": {
-            "phpCms\\" : "vendor/phpCms",
+            "phpCms\\" : "vendor/phpCms/core",
             "app\\" : "app"
         }
     },
