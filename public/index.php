@@ -4,7 +4,8 @@ use phpCms\App;
 
 require_once dirname(__DIR__) . '/config/init.php';
 require_once LIBS . '/functions.php';
+require_once CONF . '/routes.php';
 
 new App();
 
-throw new Exception("dsadas", 404);
+debug(\phpCms\Router::getRoutes());
