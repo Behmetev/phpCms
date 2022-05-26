@@ -5,7 +5,7 @@ namespace phpCms;
 class Registry
 {
     use TSingltone;
-    
+
     protected static $proretries = [];
 
     public function setProperty($name, $value)
