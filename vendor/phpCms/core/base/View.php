@@ -49,7 +49,11 @@ class View
         }
     }
 
-    public function getMeta(){
-        //TODO: 
+    public function getMeta()
+    {
+        $outPut = '<title>' . $this->meta['title'] . '</title>' . PHP_EOL;
+        $outPut .= '<meta name="disctiption" content="' . $this->meta['desc'] . '">' . PHP_EOL;
+        $outPut .= '<meta name="keywords" content="' . $this->meta['keywords'] . '">' . PHP_EOL;
+        return $outPut;
     }
 }
