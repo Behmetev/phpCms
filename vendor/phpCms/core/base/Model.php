@@ -2,6 +2,8 @@
 
 namespace phpCms\base;
 
+use phpCms\Db;
+
 abstract class Model
 {
     public $attributes = [];
@@ -10,7 +12,6 @@ abstract class Model
 
     public function __construct()
     {
-        
+        Db::instance();
     }
-
 }
