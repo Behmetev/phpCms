@@ -14,4 +14,12 @@
     <?= $content; ?>
 </body>
 
+<?php
+$logs = R::getDatabaseAdapter()
+    ->getDatabase()
+    ->getLogger();
+
+print_r($logs->grep('SELECT'));
+?>
+
 </html>

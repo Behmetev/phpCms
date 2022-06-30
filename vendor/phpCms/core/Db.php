@@ -17,7 +17,7 @@ class Db
         if (!\R::testConnection()) {
             throw new Exception("нет соединения с БД", 500);
         }
-        \R::freezee(true);
+        \R::freeze(true);
         if (DEBUG) {
             \R::debug(true, 1);
         }
