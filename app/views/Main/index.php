@@ -1,2 +1,1 @@
-<h1>Hello, w</h1>
-<p><?=$name;?></p>
+<h1>Hello, world</h1>
