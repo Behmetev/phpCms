@@ -22,7 +22,7 @@ class Registry
         }
     }
 
-    public function getPropertyes()
+    public function getProperties()
     {
         return self::$proretries;
     }
