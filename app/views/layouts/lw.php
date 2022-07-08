@@ -22,10 +22,8 @@
                 <div class="col-md-6 top-header-left">
                     <div class="drop">
                         <div class="box">
-                            <select tabindex="4" class="dropdown drop">
-                                <option value="" class="label">Dollar :</option>
-                                <option value="1">Dollar</option>
-                                <option value="2">Euro</option>
+                            <select id="currency" tabindex="4" class="dropdown drop">
+                                <?php new app\widget\currency\Currency(); ?>
                             </select>
                         </div>
                         <div class="box1">
@@ -323,6 +321,7 @@
     <script src="/js/jquery.easydropdown.js"></script>
     <!--Slider-Starts-Here-->
     <script src="/js/responsiveslides.min.js"></script>
+
     <script>
         // You can also use "$(window).load(function() {"
         $(function() {
@@ -344,6 +343,7 @@
         });
     </script>
     <!--End-slider-script-->
+    <script src="/js/main.js"></script>
 </body>
 
 </html>
