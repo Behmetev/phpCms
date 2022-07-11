@@ -42,6 +42,7 @@
 
 <!--product-starts-->
 <? if ($hits) { ?>
+   <? $curr = \phpCms\App::$app->getProperty('currency'); ?>
    <div class="product">
       <div class="container">
          <div class="product-top">
@@ -57,15 +58,21 @@
                            <p><?/*= $hit->content; */ ?></p>
                            <h4>
                               <a class="add-to-card-link" href="cart/add?id=<?= $hit->id; ?>">
-                                 <i>
-
-                                 </i>
+                                 <i></i>
                               </a>
                               <span class="item_price">
-                                 <?= $hit->price; ?>
+                                 <?= $curr['symbol_left']; ?>
+                                 <?= $hit->price * $curr['value']; ?>
+                                 <?= $curr['symbol_right']; ?>
                               </span>
                               <?php if ($hit->old_price) { ?>
-                                 <small><?= $hit->old_price; ?></small>
+                                 <small>
+                                    <?= $curr['symbol_left']; ?>
+                                    <del>
+                                       <?= $hit->old_price * $curr['value']; ?>
+                                    </del>
+                                    <?= $curr['symbol_right']; ?>
+                                 </small>
                               <? } ?>
                            </h4>
                         </div>
@@ -73,7 +80,7 @@
                         <div class="srch">
                            <span><?= $hit->img; ?></span>
                         </div>
-                        */?>
+                        */ ?>
                      </div>
                   </div>
                <? } ?>
