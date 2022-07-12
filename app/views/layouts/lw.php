@@ -66,6 +66,13 @@
         <div class="container">
             <div class="header">
                 <div class="col-md-9 header-left">
+                    <div class="menu">
+                        <?php new \app\widget\menu\Menu([
+                            'tpl' => WWW . '/menu/menu.php',
+                            'attrs' => []
+                        ]); ?>
+                    </div>
+                    <?/*
                     <div class="top-nav">
                         <ul class="memenu skyblue">
                             <li class="active"><a href="index.html">Home</a></li>
@@ -204,6 +211,7 @@
                             </li>
                         </ul>
                     </div>
+                    */ ?>
                     <div class="clearfix"> </div>
                 </div>
                 <div class="col-md-3 header-right">
