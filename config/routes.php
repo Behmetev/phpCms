@@ -2,6 +2,12 @@
 
 use phpCms\Router;
 
+
+Router::add(
+    '^product/(?P<alias>[a-z0-9-]+)/?$',
+    ['controller' => 'Product', 'action' => 'view']
+);
+
 Router::add(
     '^admin$',
     ['controller' => 'Main', 'action' => 'index', 'prefix' => 'admin']
