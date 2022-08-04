@@ -16,13 +16,16 @@ class ProductController extends AppController
 
         $related = \R::getAll("SELECT * FROM related_product JOIN product ON product.id = related_product.related_id WHERE related_product.product_id = ?", [$product->id]);
 
-        //debug($related);
+        $gallery = \R::findAll("gallery", "product_id = ?", [$product->id]);
+
+        //debug($gallery);
 
         $this->setMeta(
             $product->title,
             $product->description,
             $product->ketwords
         );
-        $this->set(compact('product', 'related'));
+        
+        $this->set(compact('product', 'related', 'gallery'));
     }
 }
