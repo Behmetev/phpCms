@@ -216,6 +216,13 @@
     <!--End-slider-script-->
     <script src="/js/main.js"></script>
     <script src="/megamenu/js/megamenu.js"></script>
+    <?php
+    $logs = R::getDatabaseAdapter()
+        ->getDatabase()
+        ->getLogger();
+
+    debug($logs->grep('SELECT'));
+    ?>
 </body>
 
 </html>
