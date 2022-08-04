@@ -2,7 +2,7 @@
 
 namespace app\controllers;
 
-use Exception;
+use app\models\Product;
 
 class ProductController extends AppController
 {
@@ -18,14 +18,22 @@ class ProductController extends AppController
 
         $gallery = \R::findAll("gallery", "product_id = ?", [$product->id]);
 
-        //debug($gallery);
+        $p_model = new Product();
+        $p_model->setRecentlyViwed($product->id);
+
+        $r_viewed = $p_model->getRecentlyViwed();
+        $resentlyViwed = null;
+
+        if ($r_viewed) {
+            $resentlyViwed = \R::find('product', 'id IN (' . \R::genSlots($r_viewed) . ') LIMIT 3', $r_viewed);
+        }
 
         $this->setMeta(
             $product->title,
             $product->description,
             $product->ketwords
         );
-        
-        $this->set(compact('product', 'related', 'gallery'));
+
+        $this->set(compact('product', 'related', 'gallery', 'resentlyViwed'));
     }
 }
